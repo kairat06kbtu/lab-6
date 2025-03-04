@@ -1,0 +1,46 @@
+from functools import reduce
+
+def multiply_list(numbers):
+    return reduce(lambda x, y: x * y, numbers)
+
+numbers = [2, 3, 4, 5]
+print("Произведение чисел:", multiply_list(numbers))
+
+
+def count_case(s):
+    upper_case = sum(1 for char in s if char.isupper())
+    lower_case = sum(1 for char in s if char.islower())
+    return upper_case, lower_case
+
+text = "Hello World!"
+upper, lower = count_case(text)
+print("Заглавные буквы:", upper)
+print("Строчные буквы:", lower)
+
+
+def is_palindrome(s):
+    return s == s[::-1]
+
+word = "madam"
+print(f"'{word}' - палиндром?", is_palindrome(word))
+
+
+import time
+import math
+
+def delayed_sqrt(number, delay_ms):
+    time.sleep(delay_ms / 1000)  # Преобразуем миллисекунды в секунды
+    return math.sqrt(number)
+
+num = 25100
+delay = 2123
+print(f"Квадратный корень из {num} через {delay} миллисекунд: {delayed_sqrt(num, delay)}")
+
+
+
+
+def all_true(t):
+    return all(t)
+
+tup = (True, True, True)
+print("Все элементы кортежа истинны?", all_true(tup))
